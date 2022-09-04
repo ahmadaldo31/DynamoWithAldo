@@ -1,0 +1,316 @@
+{
+  "Uuid": "8689c9d0-522f-4de9-85ca-7a233bba1cbb",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "2022_CeilingCreation",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [
+    {
+      "Id": "031e6339096844bbbf5077279ae050ac",
+      "Name": "Ceiling Types",
+      "Type": "dropdownSelection",
+      "Value": "600x600mm_Grid",
+      "Description": "CeilingTypesDescription",
+      "SelectedIndex": 1
+    },
+    {
+      "Id": "03eed5ff5ef94b0084f3bff9f32bbec8",
+      "Name": "Levels",
+      "Type": "dropdownSelection",
+      "Value": "Lantai 1",
+      "Description": "Select a level in the active document",
+      "SelectedIndex": 0
+    },
+    {
+      "Id": "2e91893c87354343a9de5fee0da8d77c",
+      "Name": "Select Faces",
+      "Type": "hostSelection",
+      "Value": "b62326f8-72d2-49e7-ab81-ffe7616f7860-0004e176:1:SURFACE,af16200c-5915-475f-aa40-df84bfe17070-0005288c:1:SURFACE,af16200c-5915-475f-aa40-df84bfe17070-000528bb:1:SURFACE,af16200c-5915-475f-aa40-df84bfe17070-000528da:1:SURFACE,af16200c-5915-475f-aa40-df84bfe17070-000528f9:1:SURFACE",
+      "Description": "Select multiple faces from the Revit document.",
+      "SelectedIndex": 0
+    }
+  ],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Surface.PerimeterCurves",
+      "Id": "bae7b2120ab74ed48507800fb3d0d8a1",
+      "Inputs": [
+        {
+          "Id": "e999c5412c5e4721b24160e5a20df678",
+          "Name": "surface",
+          "Description": "Autodesk.DesignScript.Geometry.Surface",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "c43be987e33847d9b1e2fe6657e869a8",
+          "Name": "Curve[]",
+          "Description": "Curve[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Return all the boundary Curves of the Surface.\n\nSurface.PerimeterCurves ( ): Curve[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Ceiling.ByOutlineTypeAndLevel@Autodesk.DesignScript.Geometry.PolyCurve,Revit.Elements.CeilingType,Revit.Elements.Level",
+      "Id": "7dd382c754d24458a9ade9e31b82b399",
+      "Inputs": [
+        {
+          "Id": "6f12214b80fa41228071bc1763caed43",
+          "Name": "outline",
+          "Description": "PolyCurve",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "4c5d686522614338a45a91a0f8b2c8eb",
+          "Name": "ceilingType",
+          "Description": "CeilingType",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "df68cb212174424fa81ba3f77b7b6373",
+          "Name": "level",
+          "Description": "Level",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "bcab7441718c454fbcab2ada2ac4bba4",
+          "Name": "Ceiling",
+          "Description": "The ceiling",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Create a Revit Ceiling given its curve outline and Level\n\nCeiling.ByOutlineTypeAndLevel (outline: PolyCurve, ceilingType: CeilingType, level: Level): Ceiling"
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.CeilingTypes, DSRevitNodesUI",
+      "SelectedIndex": 1,
+      "SelectedString": "600x600mm_Grid",
+      "NodeType": "ExtensionNode",
+      "Id": "031e6339096844bbbf5077279ae050ac",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "24c8436727ce4ec8989b78697a27db03",
+          "Name": "Ceiling Type",
+          "Description": "The selected Ceiling Type",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "CeilingTypesDescription"
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.Levels, DSRevitNodesUI",
+      "SelectedIndex": 0,
+      "SelectedString": "Lantai 1",
+      "NodeType": "ExtensionNode",
+      "Id": "03eed5ff5ef94b0084f3bff9f32bbec8",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "6c711dba86a14b8c8b1a732e5f6a57a7",
+          "Name": "Levels",
+          "Description": "The selected Levels",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Select a level in the active document"
+    },
+    {
+      "ConcreteType": "Dynamo.Nodes.SelectFaces, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "InstanceId": [
+        "b62326f8-72d2-49e7-ab81-ffe7616f7860-0004e176:1:SURFACE",
+        "af16200c-5915-475f-aa40-df84bfe17070-0005288c:1:SURFACE",
+        "af16200c-5915-475f-aa40-df84bfe17070-000528bb:1:SURFACE",
+        "af16200c-5915-475f-aa40-df84bfe17070-000528da:1:SURFACE",
+        "af16200c-5915-475f-aa40-df84bfe17070-000528f9:1:SURFACE"
+      ],
+      "Id": "2e91893c87354343a9de5fee0da8d77c",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "4047a6c763dc4c72865d25425204a4e7",
+          "Name": "Surfaces",
+          "Description": "The selected elements.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "c43be987e33847d9b1e2fe6657e869a8",
+      "End": "6f12214b80fa41228071bc1763caed43",
+      "Id": "874b283e21b5436d9930d72f05fa16d1"
+    },
+    {
+      "Start": "24c8436727ce4ec8989b78697a27db03",
+      "End": "4c5d686522614338a45a91a0f8b2c8eb",
+      "Id": "482dcb8978b64919ae791447ed757a74"
+    },
+    {
+      "Start": "6c711dba86a14b8c8b1a732e5f6a57a7",
+      "End": "df68cb212174424fa81ba3f77b7b6373",
+      "Id": "669a99f88d5f4e87b6e646f5f814559a"
+    },
+    {
+      "Start": "4047a6c763dc4c72865d25425204a4e7",
+      "End": "e999c5412c5e4721b24160e5a20df678",
+      "Id": "a41c252ca1774ff78f7f6faab68056dd"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.12",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "1.10",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [
+    {
+      "NodeId": "7dd382c7-54d2-4458-a9ad-e9e31b82b399",
+      "Binding": {
+        "ByOutlineTypeAndLevel_InClassDecl-1_InFunctionScope-1_Instance0_7dd382c7-54d2-4458-a9ad-e9e31b82b399": "PFNPQVAtRU5WOkVudmVsb3BlIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOlNPQVAtRU5DPSJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy9zb2FwL2VuY29kaW5nLyIgeG1sbnM6U09BUC1FTlY9Imh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3NvYXAvZW52ZWxvcGUvIiB4bWxuczpjbHI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vc29hcC9lbmNvZGluZy9jbHIvMS4wIiBTT0FQLUVOVjplbmNvZGluZ1N0eWxlPSJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy9zb2FwL2VuY29kaW5nLyI+DQo8U09BUC1FTlY6Qm9keT4NCjxhMTpDYWxsU2l0ZV94MDAyQl9UcmFjZVNlcmlhbGlzZXJIZWxwZXIgaWQ9InJlZi0xIiB4bWxuczphMT0iaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS9jbHIvbnNhc3NlbS9Qcm90b0NvcmUvUHJvdG9Db3JlJTJDJTIwVmVyc2lvbiUzRDIuMTIuMS44MjQ2JTJDJTIwQ3VsdHVyZSUzRG5ldXRyYWwlMkMlMjBQdWJsaWNLZXlUb2tlbiUzRG51bGwiPg0KPE51bWJlck9mRWxlbWVudHM+MTwvTnVtYmVyT2ZFbGVtZW50cz4NCjxCYXNlLTBfSGFzRGF0YT5mYWxzZTwvQmFzZS0wX0hhc0RhdGE+DQo8QmFzZS0wX0hhc05lc3RlZERhdGE+dHJ1ZTwvQmFzZS0wX0hhc05lc3RlZERhdGE+DQo8QmFzZS0wX05lc3RlZERhdGFDb3VudD41PC9CYXNlLTBfTmVzdGVkRGF0YUNvdW50Pg0KPEJhc2UtMC0wX0hhc0RhdGE+ZmFsc2U8L0Jhc2UtMC0wX0hhc0RhdGE+DQo8QmFzZS0wLTBfSGFzTmVzdGVkRGF0YT50cnVlPC9CYXNlLTAtMF9IYXNOZXN0ZWREYXRhPg0KPEJhc2UtMC0wX05lc3RlZERhdGFDb3VudD4xPC9CYXNlLTAtMF9OZXN0ZWREYXRhQ291bnQ+DQo8QmFzZS0wLTAtMF9IYXNEYXRhPnRydWU8L0Jhc2UtMC0wLTBfSGFzRGF0YT4NCjxCYXNlLTAtMC0wX0RhdGEgaWQ9InJlZi0zIj5QRk5QUVZBdFJVNVdPa1Z1ZG1Wc2IzQmxJSGh0Ykc1ek9uaHphVDBpYUhSMGNEb3ZMM2QzZHk1M015NXZjbWN2TWpBd01TOVlUVXhUWTJobGJXRXRhVzV6ZEdGdVkyVWlJSGh0Ykc1ek9uaHpaRDBpYUhSMGNEb3ZMM2QzZHk1M015NXZjbWN2TWpBd01TOVlUVXhUWTJobGJXRWlJSGh0Ykc1ek9sTlBRVkF0UlU1RFBTSm9kSFJ3T2k4dmMyTm9aVzFoY3k1NGJXeHpiMkZ3TG05eVp5OXpiMkZ3TDJWdVkyOWthVzVuTHlJZ2VHMXNibk02VTA5QlVDMUZUbFk5SW1oMGRIQTZMeTl6WTJobGJXRnpMbmh0YkhOdllYQXViM0puTDNOdllYQXZaVzUyWld4dmNHVXZJaUI0Yld4dWN6cGpiSEk5SW1oMGRIQTZMeTl6WTJobGJXRnpMbTFwWTNKdmMyOW1kQzVqYjIwdmMyOWhjQzlsYm1OdlpHbHVaeTlqYkhJdk1TNHdJaUJUVDBGUUxVVk9WanBsYm1OdlpHbHVaMU4wZVd4bFBTSm9kSFJ3T2k4dmMyTm9aVzFoY3k1NGJXeHpiMkZ3TG05eVp5OXpiMkZ3TDJWdVkyOWthVzVuTHlJK0RRbzhVMDlCVUMxRlRsWTZRbTlrZVQ0TkNqeGhNVHBUWlhKcFlXeHBlbUZpYkdWSlpDQnBaRDBpY21WbUxURWlJSGh0Ykc1ek9tRXhQU0pvZEhSd09pOHZjMk5vWlcxaGN5NXRhV055YjNOdlpuUXVZMjl0TDJOc2NpOXVjMkZ6YzJWdEwxSmxkbWwwVTJWeWRtbGpaWE11VUdWeWMybHpkR1Z1WTJVdlVtVjJhWFJUWlhKMmFXTmxjeVV5UXlVeU1GWmxjbk5wYjI0bE0wUXlMakV5TGpFdU9EUXhNU1V5UXlVeU1FTjFiSFIxY21VbE0wUnVaWFYwY21Gc0pUSkRKVEl3VUhWaWJHbGpTMlY1Vkc5clpXNGxNMFJ1ZFd4c0lqNE5Danh6ZEhKcGJtZEpSQ0JwWkQwaWNtVm1MVE1pUG1GbU1UWXlNREJqTFRVNU1UVXRORGMxWmkxaFlUUXdMV1JtT0RSaVptVXhOekEzTUMwd01EQTFNbU5qT0R3dmMzUnlhVzVuU1VRK0RRbzhhVzUwU1VRK016TTVNVFEwUEM5cGJuUkpSRDROQ2p3dllURTZVMlZ5YVdGc2FYcGhZbXhsU1dRK0RRbzhMMU5QUVZBdFJVNVdPa0p2WkhrK0RRbzhMMU5QUVZBdFJVNVdPa1Z1ZG1Wc2IzQmxQZzBLPC9CYXNlLTAtMC0wX0RhdGE+DQo8QmFzZS0wLTAtMF9IYXNOZXN0ZWREYXRhPmZhbHNlPC9CYXNlLTAtMC0wX0hhc05lc3RlZERhdGE+DQo8QmFzZS0wLTFfSGFzRGF0YT5mYWxzZTwvQmFzZS0wLTFfSGFzRGF0YT4NCjxCYXNlLTAtMV9IYXNOZXN0ZWREYXRhPnRydWU8L0Jhc2UtMC0xX0hhc05lc3RlZERhdGE+DQo8QmFzZS0wLTFfTmVzdGVkRGF0YUNvdW50PjE8L0Jhc2UtMC0xX05lc3RlZERhdGFDb3VudD4NCjxCYXNlLTAtMS0wX0hhc0RhdGE+dHJ1ZTwvQmFzZS0wLTEtMF9IYXNEYXRhPg0KPEJhc2UtMC0xLTBfRGF0YSBpZD0icmVmLTQiPlBGTlBRVkF0UlU1V09rVnVkbVZzYjNCbElIaHRiRzV6T25oemFUMGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TVM5WVRVeFRZMmhsYldFdGFXNXpkR0Z1WTJVaUlIaHRiRzV6T25oelpEMGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TVM5WVRVeFRZMmhsYldFaUlIaHRiRzV6T2xOUFFWQXRSVTVEUFNKb2RIUndPaTh2YzJOb1pXMWhjeTU0Yld4emIyRndMbTl5Wnk5emIyRndMMlZ1WTI5a2FXNW5MeUlnZUcxc2JuTTZVMDlCVUMxRlRsWTlJbWgwZEhBNkx5OXpZMmhsYldGekxuaHRiSE52WVhBdWIzSm5MM052WVhBdlpXNTJaV3h2Y0dVdklpQjRiV3h1Y3pwamJISTlJbWgwZEhBNkx5OXpZMmhsYldGekxtMXBZM0p2YzI5bWRDNWpiMjB2YzI5aGNDOWxibU52WkdsdVp5OWpiSEl2TVM0d0lpQlRUMEZRTFVWT1ZqcGxibU52WkdsdVoxTjBlV3hsUFNKb2RIUndPaTh2YzJOb1pXMWhjeTU0Yld4emIyRndMbTl5Wnk5emIyRndMMlZ1WTI5a2FXNW5MeUkrRFFvOFUwOUJVQzFGVGxZNlFtOWtlVDROQ2p4aE1UcFRaWEpwWVd4cGVtRmliR1ZKWkNCcFpEMGljbVZtTFRFaUlIaHRiRzV6T21FeFBTSm9kSFJ3T2k4dmMyTm9aVzFoY3k1dGFXTnliM052Wm5RdVkyOXRMMk5zY2k5dWMyRnpjMlZ0TDFKbGRtbDBVMlZ5ZG1salpYTXVVR1Z5YzJsemRHVnVZMlV2VW1WMmFYUlRaWEoyYVdObGN5VXlReVV5TUZabGNuTnBiMjRsTTBReUxqRXlMakV1T0RReE1TVXlReVV5TUVOMWJIUjFjbVVsTTBSdVpYVjBjbUZzSlRKREpUSXdVSFZpYkdsalMyVjVWRzlyWlc0bE0wUnVkV3hzSWo0TkNqeHpkSEpwYm1kSlJDQnBaRDBpY21WbUxUTWlQbUZtTVRZeU1EQmpMVFU1TVRVdE5EYzFaaTFoWVRRd0xXUm1PRFJpWm1VeE56QTNNQzB3TURBMU1tTmtNand2YzNSeWFXNW5TVVErRFFvOGFXNTBTVVErTXpNNU1UVTBQQzlwYm5SSlJENE5Dand2WVRFNlUyVnlhV0ZzYVhwaFlteGxTV1ErRFFvOEwxTlBRVkF0UlU1V09rSnZaSGsrRFFvOEwxTlBRVkF0UlU1V09rVnVkbVZzYjNCbFBnMEs8L0Jhc2UtMC0xLTBfRGF0YT4NCjxCYXNlLTAtMS0wX0hhc05lc3RlZERhdGE+ZmFsc2U8L0Jhc2UtMC0xLTBfSGFzTmVzdGVkRGF0YT4NCjxCYXNlLTAtMl9IYXNEYXRhPmZhbHNlPC9CYXNlLTAtMl9IYXNEYXRhPg0KPEJhc2UtMC0yX0hhc05lc3RlZERhdGE+dHJ1ZTwvQmFzZS0wLTJfSGFzTmVzdGVkRGF0YT4NCjxCYXNlLTAtMl9OZXN0ZWREYXRhQ291bnQ+MTwvQmFzZS0wLTJfTmVzdGVkRGF0YUNvdW50Pg0KPEJhc2UtMC0yLTBfSGFzRGF0YT50cnVlPC9CYXNlLTAtMi0wX0hhc0RhdGE+DQo8QmFzZS0wLTItMF9EYXRhIGlkPSJyZWYtNSI+UEZOUFFWQXRSVTVXT2tWdWRtVnNiM0JsSUhodGJHNXpPbmh6YVQwaWFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1qQXdNUzlZVFV4VFkyaGxiV0V0YVc1emRHRnVZMlVpSUhodGJHNXpPbmh6WkQwaWFIUjBjRG92TDNkM2R5NTNNeTV2Y21jdk1qQXdNUzlZVFV4VFkyaGxiV0VpSUhodGJHNXpPbE5QUVZBdFJVNURQU0pvZEhSd09pOHZjMk5vWlcxaGN5NTRiV3h6YjJGd0xtOXlaeTl6YjJGd0wyVnVZMjlrYVc1bkx5SWdlRzFzYm5NNlUwOUJVQzFGVGxZOUltaDBkSEE2THk5elkyaGxiV0Z6TG5odGJITnZZWEF1YjNKbkwzTnZZWEF2Wlc1MlpXeHZjR1V2SWlCNGJXeHVjenBqYkhJOUltaDBkSEE2THk5elkyaGxiV0Z6TG0xcFkzSnZjMjltZEM1amIyMHZjMjloY0M5bGJtTnZaR2x1Wnk5amJISXZNUzR3SWlCVFQwRlFMVVZPVmpwbGJtTnZaR2x1WjFOMGVXeGxQU0pvZEhSd09pOHZjMk5vWlcxaGN5NTRiV3h6YjJGd0xtOXlaeTl6YjJGd0wyVnVZMjlrYVc1bkx5SStEUW84VTA5QlVDMUZUbFk2UW05a2VUNE5DanhoTVRwVFpYSnBZV3hwZW1GaWJHVkpaQ0JwWkQwaWNtVm1MVEVpSUhodGJHNXpPbUV4UFNKb2RIUndPaTh2YzJOb1pXMWhjeTV0YVdOeWIzTnZablF1WTI5dEwyTnNjaTl1YzJGemMyVnRMMUpsZG1sMFUyVnlkbWxqWlhNdVVHVnljMmx6ZEdWdVkyVXZVbVYyYVhSVFpYSjJhV05sY3lVeVF5VXlNRlpsY25OcGIyNGxNMFF5TGpFeUxqRXVPRFF4TVNVeVF5VXlNRU4xYkhSMWNtVWxNMFJ1WlhWMGNtRnNKVEpESlRJd1VIVmliR2xqUzJWNVZHOXJaVzRsTTBSdWRXeHNJajROQ2p4emRISnBibWRKUkNCcFpEMGljbVZtTFRNaVBtRm1NVFl5TURCakxUVTVNVFV0TkRjMVppMWhZVFF3TFdSbU9EUmlabVV4TnpBM01DMHdNREExTW1Oa1pEd3ZjM1J5YVc1blNVUStEUW84YVc1MFNVUStNek01TVRZMVBDOXBiblJKUkQ0TkNqd3ZZVEU2VTJWeWFXRnNhWHBoWW14bFNXUStEUW84TDFOUFFWQXRSVTVXT2tKdlpIaytEUW84TDFOUFFWQXRSVTVXT2tWdWRtVnNiM0JsUGcwSzwvQmFzZS0wLTItMF9EYXRhPg0KPEJhc2UtMC0yLTBfSGFzTmVzdGVkRGF0YT5mYWxzZTwvQmFzZS0wLTItMF9IYXNOZXN0ZWREYXRhPg0KPEJhc2UtMC0zX0hhc0RhdGE+ZmFsc2U8L0Jhc2UtMC0zX0hhc0RhdGE+DQo8QmFzZS0wLTNfSGFzTmVzdGVkRGF0YT50cnVlPC9CYXNlLTAtM19IYXNOZXN0ZWREYXRhPg0KPEJhc2UtMC0zX05lc3RlZERhdGFDb3VudD4xPC9CYXNlLTAtM19OZXN0ZWREYXRhQ291bnQ+DQo8QmFzZS0wLTMtMF9IYXNEYXRhPnRydWU8L0Jhc2UtMC0zLTBfSGFzRGF0YT4NCjxCYXNlLTAtMy0wX0RhdGEgaWQ9InJlZi02Ij5QRk5QUVZBdFJVNVdPa1Z1ZG1Wc2IzQmxJSGh0Ykc1ek9uaHphVDBpYUhSMGNEb3ZMM2QzZHk1M015NXZjbWN2TWpBd01TOVlUVXhUWTJobGJXRXRhVzV6ZEdGdVkyVWlJSGh0Ykc1ek9uaHpaRDBpYUhSMGNEb3ZMM2QzZHk1M015NXZjbWN2TWpBd01TOVlUVXhUWTJobGJXRWlJSGh0Ykc1ek9sTlBRVkF0UlU1RFBTSm9kSFJ3T2k4dmMyTm9aVzFoY3k1NGJXeHpiMkZ3TG05eVp5OXpiMkZ3TDJWdVkyOWthVzVuTHlJZ2VHMXNibk02VTA5QlVDMUZUbFk5SW1oMGRIQTZMeTl6WTJobGJXRnpMbmh0YkhOdllYQXViM0puTDNOdllYQXZaVzUyWld4dmNHVXZJaUI0Yld4dWN6cGpiSEk5SW1oMGRIQTZMeTl6WTJobGJXRnpMbTFwWTNKdmMyOW1kQzVqYjIwdmMyOWhjQzlsYm1OdlpHbHVaeTlqYkhJdk1TNHdJaUJUVDBGUUxVVk9WanBsYm1OdlpHbHVaMU4wZVd4bFBTSm9kSFJ3T2k4dmMyTm9aVzFoY3k1NGJXeHpiMkZ3TG05eVp5OXpiMkZ3TDJWdVkyOWthVzVuTHlJK0RRbzhVMDlCVUMxRlRsWTZRbTlrZVQ0TkNqeGhNVHBUWlhKcFlXeHBlbUZpYkdWSlpDQnBaRDBpY21WbUxURWlJSGh0Ykc1ek9tRXhQU0pvZEhSd09pOHZjMk5vWlcxaGN5NXRhV055YjNOdlpuUXVZMjl0TDJOc2NpOXVjMkZ6YzJWdEwxSmxkbWwwVTJWeWRtbGpaWE11VUdWeWMybHpkR1Z1WTJVdlVtVjJhWFJUWlhKMmFXTmxjeVV5UXlVeU1GWmxjbk5wYjI0bE0wUXlMakV5TGpFdU9EUXhNU1V5UXlVeU1FTjFiSFIxY21VbE0wUnVaWFYwY21Gc0pUSkRKVEl3VUhWaWJHbGpTMlY1Vkc5clpXNGxNMFJ1ZFd4c0lqNE5Danh6ZEhKcGJtZEpSQ0JwWkQwaWNtVm1MVE1pUG1GbU1UWXlNREJqTFRVNU1UVXRORGMxWmkxaFlUUXdMV1JtT0RSaVptVXhOekEzTUMwd01EQTFNbU5sT0R3dmMzUnlhVzVuU1VRK0RRbzhhVzUwU1VRK016TTVNVGMyUEM5cGJuUkpSRDROQ2p3dllURTZVMlZ5YVdGc2FYcGhZbXhsU1dRK0RRbzhMMU5QUVZBdFJVNVdPa0p2WkhrK0RRbzhMMU5QUVZBdFJVNVdPa1Z1ZG1Wc2IzQmxQZzBLPC9CYXNlLTAtMy0wX0RhdGE+DQo8QmFzZS0wLTMtMF9IYXNOZXN0ZWREYXRhPmZhbHNlPC9CYXNlLTAtMy0wX0hhc05lc3RlZERhdGE+DQo8QmFzZS0wLTRfSGFzRGF0YT5mYWxzZTwvQmFzZS0wLTRfSGFzRGF0YT4NCjxCYXNlLTAtNF9IYXNOZXN0ZWREYXRhPnRydWU8L0Jhc2UtMC00X0hhc05lc3RlZERhdGE+DQo8QmFzZS0wLTRfTmVzdGVkRGF0YUNvdW50PjE8L0Jhc2UtMC00X05lc3RlZERhdGFDb3VudD4NCjxCYXNlLTAtNC0wX0hhc0RhdGE+dHJ1ZTwvQmFzZS0wLTQtMF9IYXNEYXRhPg0KPEJhc2UtMC00LTBfRGF0YSBpZD0icmVmLTciPlBGTlBRVkF0UlU1V09rVnVkbVZzYjNCbElIaHRiRzV6T25oemFUMGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TVM5WVRVeFRZMmhsYldFdGFXNXpkR0Z1WTJVaUlIaHRiRzV6T25oelpEMGlhSFIwY0RvdkwzZDNkeTUzTXk1dmNtY3ZNakF3TVM5WVRVeFRZMmhsYldFaUlIaHRiRzV6T2xOUFFWQXRSVTVEUFNKb2RIUndPaTh2YzJOb1pXMWhjeTU0Yld4emIyRndMbTl5Wnk5emIyRndMMlZ1WTI5a2FXNW5MeUlnZUcxc2JuTTZVMDlCVUMxRlRsWTlJbWgwZEhBNkx5OXpZMmhsYldGekxuaHRiSE52WVhBdWIzSm5MM052WVhBdlpXNTJaV3h2Y0dVdklpQjRiV3h1Y3pwamJISTlJbWgwZEhBNkx5OXpZMmhsYldGekxtMXBZM0p2YzI5bWRDNWpiMjB2YzI5aGNDOWxibU52WkdsdVp5OWpiSEl2TVM0d0lpQlRUMEZRTFVWT1ZqcGxibU52WkdsdVoxTjBlV3hsUFNKb2RIUndPaTh2YzJOb1pXMWhjeTU0Yld4emIyRndMbTl5Wnk5emIyRndMMlZ1WTI5a2FXNW5MeUkrRFFvOFUwOUJVQzFGVGxZNlFtOWtlVDROQ2p4aE1UcFRaWEpwWVd4cGVtRmliR1ZKWkNCcFpEMGljbVZtTFRFaUlIaHRiRzV6T21FeFBTSm9kSFJ3T2k4dmMyTm9aVzFoY3k1dGFXTnliM052Wm5RdVkyOXRMMk5zY2k5dWMyRnpjMlZ0TDFKbGRtbDBVMlZ5ZG1salpYTXVVR1Z5YzJsemRHVnVZMlV2VW1WMmFYUlRaWEoyYVdObGN5VXlReVV5TUZabGNuTnBiMjRsTTBReUxqRXlMakV1T0RReE1TVXlReVV5TUVOMWJIUjFjbVVsTTBSdVpYVjBjbUZzSlRKREpUSXdVSFZpYkdsalMyVjVWRzlyWlc0bE0wUnVkV3hzSWo0TkNqeHpkSEpwYm1kSlJDQnBaRDBpY21WbUxUTWlQbUZtTVRZeU1EQmpMVFU1TVRVdE5EYzFaaTFoWVRRd0xXUm1PRFJpWm1VeE56QTNNQzB3TURBMU1tTm1Nend2YzNSeWFXNW5TVVErRFFvOGFXNTBTVVErTXpNNU1UZzNQQzlwYm5SSlJENE5Dand2WVRFNlUyVnlhV0ZzYVhwaFlteGxTV1ErRFFvOEwxTlBRVkF0UlU1V09rSnZaSGsrRFFvOEwxTlBRVkF0UlU1V09rVnVkbVZzYjNCbFBnMEs8L0Jhc2UtMC00LTBfRGF0YT4NCjxCYXNlLTAtNC0wX0hhc05lc3RlZERhdGE+ZmFsc2U8L0Jhc2UtMC00LTBfSGFzTmVzdGVkRGF0YT4NCjwvYTE6Q2FsbFNpdGVfeDAwMkJfVHJhY2VTZXJpYWxpc2VySGVscGVyPg0KPC9TT0FQLUVOVjpCb2R5Pg0KPC9TT0FQLUVOVjpFbnZlbG9wZT4NCg=="
+      }
+    }
+  ],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.12.1.8246",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -750.17822265625,
+      "EyeY": -9068.984375,
+      "EyeZ": -2009.1513671875,
+      "LookX": -6255.2900390625,
+      "LookY": 6604.6318359375,
+      "LookZ": -4832.87548828125,
+      "UpX": -0.36540171504020691,
+      "UpY": -0.88701128959655762,
+      "UpZ": -0.2822989821434021
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Surface.PerimeterCurves",
+        "Id": "bae7b2120ab74ed48507800fb3d0d8a1",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1507.411293746854,
+        "Y": 2690.5725638690906
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Ceiling.ByOutlineTypeAndLevel",
+        "Id": "7dd382c754d24458a9ade9e31b82b399",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1847.7890806863918,
+        "Y": 2757.7030378178565
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Ceiling Types",
+        "Id": "031e6339096844bbbf5077279ae050ac",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1504.8795496498187,
+        "Y": 2804.1722260088527
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Levels",
+        "Id": "03eed5ff5ef94b0084f3bff9f32bbec8",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1573.5640010273178,
+        "Y": 2900.8281169616407
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Select Faces",
+        "Id": "2e91893c87354343a9de5fee0da8d77c",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1216.514348954423,
+        "Y": 2690.0854569314338
+      }
+    ],
+    "Annotations": [],
+    "X": -884.78448384913315,
+    "Y": -1767.8692331281632,
+    "Zoom": 0.69966021961690694
+  }
+}
