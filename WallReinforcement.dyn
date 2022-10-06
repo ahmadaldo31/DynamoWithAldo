@@ -1,0 +1,933 @@
+{
+  "Uuid": "a5e28d4e-db92-48db-bd26-33c16a731dc0",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "WallReinforcement",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [
+    {
+      "Id": "44a940a3392347c7838133a523250253",
+      "Name": "Select Model Element",
+      "Type": "hostSelection",
+      "Value": "3a729faa-ecf4-4dab-8c95-f59198a5d442-000511b3",
+      "Description": "Select a model element from the document.",
+      "SelectedIndex": 0
+    },
+    {
+      "Id": "0c1fe6e245ed474fa0d023cdfd256d9c",
+      "Name": "Select Edge",
+      "Type": "hostSelection",
+      "Value": "3a729faa-ecf4-4dab-8c95-f59198a5d442-000511b3:21:LINEAR",
+      "Description": "Select an edge.",
+      "SelectedIndex": 0
+    },
+    {
+      "Id": "6b995bea071c4708a5b92744ba04b7d6",
+      "Name": "RebarBarType",
+      "Type": "dropdownSelection",
+      "Value": "",
+      "Description": "Select Rebar Bar Type",
+      "SelectedIndex": -1
+    },
+    {
+      "Id": "9de64d51ed3c4a48b0b01870d8b70dee",
+      "Name": "RebarHookType",
+      "Type": "dropdownSelection",
+      "Value": "Rebar Hook 90",
+      "Description": "Select Rebar Hook Type",
+      "SelectedIndex": 1
+    },
+    {
+      "Id": "2d2e154b49164cbbb3df05ff41b6964a",
+      "Name": "Views",
+      "Type": "dropdownSelection",
+      "Value": "{3D}",
+      "Description": "All views available in the current document.",
+      "SelectedIndex": 0
+    }
+  ],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "StructuralDesign.Rebar.AreaReinforcement.AreaReinforcement.CreateBasedOnHost@Revit.Elements.Element,Autodesk.DesignScript.Geometry.Vector,bool,Revit.Elements.Element,double,double,Revit.Elements.Element,double,double,Revit.Elements.Element,double,double,Revit.Elements.Element,double,double",
+      "Id": "b9061a51be664149a3103edc3df460ae",
+      "Inputs": [
+        {
+          "Id": "225a2884521a4af78eee4dea0e4a2ab4",
+          "Name": "hostElement",
+          "Description": "The element that will host the AreaReinforcement. The host can be a Structural Floor, Structural Wall, Structural Slab, or a Part created from a structural layer belonging to one of those element types.\n\nElement",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "70cfa442a0ab497db07d63858f6e41d0",
+          "Name": "majorDirection",
+          "Description": "A vector to define the major direction of the AreaReinforcement.\n\nVector",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0892a879f32d412d9d953c6752cc6163",
+          "Name": "layoutRule",
+          "Description": "Toggle to set Layout Rule: True = Maximum Spacing, False = Fixed Number.\n\nbool\nDefault value : true",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8549e1bc54a24010abfa1c515060f643",
+          "Name": "topMajorBarType",
+          "Description": "Top Major Bar Type. If it is not set then Top Major Direction is not created.\n\nElement\nDefault value : StructuralDesign.Model.Default.SetValue()",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "655fa8cccaab47a0bd72b273c8de6675",
+          "Name": "topMajorSpacing",
+          "Description": "Top Major Spacing.\n\ndouble\nDefault value : 300",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6dc6547b291c499ba7ac0029a669c906",
+          "Name": "topMajorNumberLines",
+          "Description": "Top Major Number Of Lines.\n\ndouble\nDefault value : 4",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8f72a8500eaa496abb185be0bd50036b",
+          "Name": "topMinorBarType",
+          "Description": "Top Minor Bar Type. If it is not set then Top Minor Direction is not created.\n\nElement\nDefault value : StructuralDesign.Model.Default.SetValue()",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c1f2ab108c044a4b9d8686baa770c139",
+          "Name": "topMinorSpacing",
+          "Description": "Top Minor Spacing.\n\ndouble\nDefault value : 300",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "052183521f86421395de8db17f9d2582",
+          "Name": "topMinorNumberLines",
+          "Description": "Top Minor Number Of Lines.\n\ndouble\nDefault value : 4",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "70bdbf3baa34452ab794a457fa788ed9",
+          "Name": "bottomMajorBarType",
+          "Description": "Bottom Major Bar Type. If it is not set then Bottom Major Direction is not created.\n\nElement\nDefault value : StructuralDesign.Model.Default.SetValue()",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7198692b31114bd8bbe4d6ae2e81b174",
+          "Name": "bottomMajorSpacing",
+          "Description": "Bottom Major Spacing.\n\ndouble\nDefault value : 300",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "699e231e78874081ae8c64b432c62749",
+          "Name": "bottomMajorNumberLines",
+          "Description": "Bottom Major Number Of Lines.\n\ndouble\nDefault value : 4",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "3b08bb6e823d47b2b41fd8ca3bac22c0",
+          "Name": "bottomMinorBarType",
+          "Description": "Bottom Minor Bar Type. If it is not set then Bottom Minor Direction is not created.\n\nElement\nDefault value : StructuralDesign.Model.Default.SetValue()",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "3f409456adea4728827539576fc12090",
+          "Name": "bottomMinorSpacing",
+          "Description": "Bottom Minor Spacing.\n\ndouble\nDefault value : 300",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "66ca2bb7c6cb4a69937376bda3f4c407",
+          "Name": "bottomMinorNumberLines",
+          "Description": "Bottom Minor Number Of Lines.\n\ndouble\nDefault value : 4",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "39b4b51d66bd4935be05400425221ed2",
+          "Name": "AreaReinforcement",
+          "Description": "Area Reinforcement",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Creates a new Area Reinforcement object based on a host boundary.\n\nAreaReinforcement.CreateBasedOnHost (hostElement: Element, majorDirection: Vector, layoutRule: bool = true, topMajorBarType: Element = StructuralDesign.Model.Default.SetValue(), topMajorSpacing: double = 300, topMajorNumberLines: double = 4, topMinorBarType: Element = StructuralDesign.Model.Default.SetValue(), topMinorSpacing: double = 300, topMinorNumberLines: double = 4, bottomMajorBarType: Element = StructuralDesign.Model.Default.SetValue(), bottomMajorSpacing: double = 300, bottomMajorNumberLines: double = 4, bottomMinorBarType: Element = StructuralDesign.Model.Default.SetValue(), bottomMinorSpacing: double = 300, bottomMinorNumberLines: double = 4): Element"
+    },
+    {
+      "ConcreteType": "Dynamo.Nodes.DSModelElementSelection, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "InstanceId": [
+        "3a729faa-ecf4-4dab-8c95-f59198a5d442-000511b3"
+      ],
+      "Id": "44a940a3392347c7838133a523250253",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "7936ed6f9670411bb6f398a86bfa0518",
+          "Name": "Element",
+          "Description": "The selected elements.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled"
+    },
+    {
+      "ConcreteType": "Dynamo.Nodes.DSEdgeSelection, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "InstanceId": [
+        "3a729faa-ecf4-4dab-8c95-f59198a5d442-000511b3:21:LINEAR"
+      ],
+      "Id": "0c1fe6e245ed474fa0d023cdfd256d9c",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "1e62102d6f444e3e94036eac94449aeb",
+          "Name": "Curve",
+          "Description": "The selected elements.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Autodesk.DesignScript.Geometry.Line.Direction",
+      "Id": "de4ea15888644c96923e6f96f8e0124f",
+      "Inputs": [
+        {
+          "Id": "bc7604c9f32f4f1aae910095f1967528",
+          "Name": "line",
+          "Description": "Autodesk.DesignScript.Geometry.Line",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "34fb7b21c0524b9a905a8120417c0634",
+          "Name": "Vector",
+          "Description": "Vector",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "The direction of the Curve\n\nLine.Direction: Vector"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
+      "NodeType": "BooleanInputNode",
+      "InputValue": true,
+      "Id": "6f5d47619bcc4179a9ebc757a8b99041",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "05c5966378374c2aabd70c63f02247ca",
+          "Name": "",
+          "Description": "Boolean",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Selection between a true and false."
+    },
+    {
+      "ConcreteType": "StructuralDesign.Rebar.RevitRebarBarType, StructuralDesign.DropDownNodes",
+      "SelectedIndex": -1,
+      "SelectedString": "",
+      "NodeType": "ExtensionNode",
+      "Id": "6b995bea071c4708a5b92744ba04b7d6",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "b5ab9424aa7e4ff58b66519aa9f0940c",
+          "Name": "RebarBarType",
+          "Description": "The selected RebarBarType",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Select Rebar Bar Type"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "200;",
+      "Id": "1b6da68555274b3b8f1e6f76e3a844b9",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "40da37f12b8b4480adee4b8d3f8fea89",
+          "Name": "",
+          "Description": "Value of expression at line 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows for DesignScript code to be authored directly"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "StructuralDesign.Rebar.AreaReinforcement.AreaReinforcement.SetHooks@Revit.Elements.Element,Revit.Elements.Element,bool,Revit.Elements.Element,bool,Revit.Elements.Element,bool,Revit.Elements.Element,bool",
+      "Id": "c207e5574fda43f2bc4c5e8f4d9aa0a6",
+      "Inputs": [
+        {
+          "Id": "d5d35d3c45524a9da558ab00b89011ea",
+          "Name": "areaReinforcement",
+          "Description": "Area Reinforcement.\n\nElement",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "80bbc6b9650946e7a47ca681aec3cc4b",
+          "Name": "topMajorHookType",
+          "Description": "Top Major Hook Type.\n\nElement\nDefault value : StructuralDesign.Model.Default.SetValue()",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "53d033fc31764de8bbc74cd429a86cbe",
+          "Name": "topMajorHookOrientation",
+          "Description": "Toggle to set Top Major Hook Orientation: True = Up, False = Down.\n\nbool\nDefault value : false",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c016cac2fb3947e69f83c9710fceb938",
+          "Name": "topMinorHookType",
+          "Description": "Top Minor Hook Type.\n\nElement\nDefault value : StructuralDesign.Model.Default.SetValue()",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "00d8b117e96247a38c6a7806fa596370",
+          "Name": "topMinorHookOrientation",
+          "Description": "Toggle to set Top Minor Hook Orientation: True = Up, False = Down.\n\nbool\nDefault value : false",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ec70c4787e024f9bb2b6d004b955dbf4",
+          "Name": "bottomMajorHookType",
+          "Description": "Bottom Major Hook Type.\n\nElement\nDefault value : StructuralDesign.Model.Default.SetValue()",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "34085f3d1ab44bfdb06a1e5539ff7a35",
+          "Name": "bottomMajorHookOrientation",
+          "Description": "Toggle to set Bottom Major Hook Orientation: True = Up, False = Down.\n\nbool\nDefault value : true",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ddedd00f2f274c5d9d5f3fe0ce9ac50b",
+          "Name": "bottomMinorHookType",
+          "Description": "Bottom Minor Hook Type.\n\nElement\nDefault value : StructuralDesign.Model.Default.SetValue()",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "424e3e0c69ef4742a2038b4314366387",
+          "Name": "bottomMinorHookOrientation",
+          "Description": "Toggle to set Bottom Minor Hook Orientation: True = Up, False = Down.\n\nbool\nDefault value : true",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "de4304e1bc4b4d0f9ae29c450f04554f",
+          "Name": "AreaReinforcement",
+          "Description": "Area Reinforcement",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Sets up hooks of a given Area Reinforcement.\n\nAreaReinforcement.SetHooks (areaReinforcement: Element, topMajorHookType: Element = StructuralDesign.Model.Default.SetValue(), topMajorHookOrientation: bool = false, topMinorHookType: Element = StructuralDesign.Model.Default.SetValue(), topMinorHookOrientation: bool = false, bottomMajorHookType: Element = StructuralDesign.Model.Default.SetValue(), bottomMajorHookOrientation: bool = true, bottomMinorHookType: Element = StructuralDesign.Model.Default.SetValue(), bottomMinorHookOrientation: bool = true): Element"
+    },
+    {
+      "ConcreteType": "StructuralDesign.Rebar.RevitRebarHookType, StructuralDesign.DropDownNodes",
+      "SelectedIndex": 1,
+      "SelectedString": "Rebar Hook 90",
+      "NodeType": "ExtensionNode",
+      "Id": "9de64d51ed3c4a48b0b01870d8b70dee",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "2d0dbaf8f7af41edbc9d940d17a58248",
+          "Name": "RebarHookType",
+          "Description": "The selected RebarHookType",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Select Rebar Hook Type"
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.Views, DSRevitNodesUI",
+      "SelectedIndex": 0,
+      "SelectedString": "{3D}",
+      "NodeType": "ExtensionNode",
+      "Id": "2d2e154b49164cbbb3df05ff41b6964a",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "970e004034bc4825b4a2de8aa5fdd527",
+          "Name": "Views",
+          "Description": "The selected Views",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "All views available in the current document."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
+      "NodeType": "BooleanInputNode",
+      "InputValue": true,
+      "Id": "77292360811e4e4d894a7d32058dab8e",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "19d7e2af40ec47b9a95002bcaaa2a6dd",
+          "Name": "",
+          "Description": "Boolean",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Selection between a true and false."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "StructuralDesign.Rebar.AreaReinforcement.AreaReinforcement.SetSolidInView@Revit.Elements.Element,Revit.Elements.Views.View3D,bool",
+      "Id": "93a3b6d9cb144fb388ffdaaf7ffb5d68",
+      "Inputs": [
+        {
+          "Id": "9362c945f86e4a38a74b8d30ff25a38b",
+          "Name": "areaReinforcement",
+          "Description": "An AreaReinforcement element in the document.\n\nElement",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "3ca0f2d01e224f8d8319c7fdaa55a2d5",
+          "Name": "view",
+          "Description": "The 3D view element.\n\nView3D",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5df6b364c1e5474c80496e68c09b34b4",
+          "Name": "solid",
+          "Description": "True if rebar is shown solidly, false otherwise.\n\nbool\nDefault value : true",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "198c29f4f5d840bc85f20f4c6c483a81",
+          "Name": "AreaReinforcement",
+          "Description": "Area Reinforcement",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Sets this Area Reinforcement to be shown solidly in a 3D view.\n\nAreaReinforcement.SetSolidInView (areaReinforcement: Element, view: View3D, solid: bool = true): Element"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "StructuralDesign.Rebar.AreaReinforcement.AreaReinforcement.SetUnobscuredInView@Revit.Elements.Element,Revit.Elements.Views.View,bool",
+      "Id": "18b265c440cf4615a68a20306f8f51a0",
+      "Inputs": [
+        {
+          "Id": "0bafca1228524dec8547b1e922b17bf4",
+          "Name": "areaReinforcement",
+          "Description": "An AreaReinforcement element in the document.\n\nElement",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "fcd26f1123c945188b054c416b7fbc6e",
+          "Name": "view",
+          "Description": "The view element.\n\nView",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7410c64d13a84f7f8e90a04d86a4df7e",
+          "Name": "unobscured",
+          "Description": "True if rebar is shown unobscured, false otherwise.\n\nbool\nDefault value : true",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "b2c1fd15abaa45fab1ba4ab8cb57dc3e",
+          "Name": "AreaReinforcement",
+          "Description": "Area Reinforcement",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Sets this Area Reinforcement to be shown unobscured in a view.\n\nAreaReinforcement.SetUnobscuredInView (areaReinforcement: Element, view: View, unobscured: bool = true): Element"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.BoolSelector, CoreNodeModels",
+      "NodeType": "BooleanInputNode",
+      "InputValue": true,
+      "Id": "89c71b2c52e8411690a81bbd191404b0",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "fdfa209ca44a4ed883c6a2fd1217b017",
+          "Name": "",
+          "Description": "Boolean",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Selection between a true and false."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "39b4b51d66bd4935be05400425221ed2",
+      "End": "d5d35d3c45524a9da558ab00b89011ea",
+      "Id": "6f494ce2ba2b4a53b7f4871e3699ac28"
+    },
+    {
+      "Start": "7936ed6f9670411bb6f398a86bfa0518",
+      "End": "225a2884521a4af78eee4dea0e4a2ab4",
+      "Id": "4bb5258bb8744fa1a92efd5e77bea8fb"
+    },
+    {
+      "Start": "1e62102d6f444e3e94036eac94449aeb",
+      "End": "bc7604c9f32f4f1aae910095f1967528",
+      "Id": "166a522a8549456aadc0c5c38f166d35"
+    },
+    {
+      "Start": "34fb7b21c0524b9a905a8120417c0634",
+      "End": "70cfa442a0ab497db07d63858f6e41d0",
+      "Id": "053d374e06354e5396f71cea4c8c674a"
+    },
+    {
+      "Start": "05c5966378374c2aabd70c63f02247ca",
+      "End": "0892a879f32d412d9d953c6752cc6163",
+      "Id": "d825ae32a4c1460fb7d07a2316cb9894"
+    },
+    {
+      "Start": "b5ab9424aa7e4ff58b66519aa9f0940c",
+      "End": "8549e1bc54a24010abfa1c515060f643",
+      "Id": "e88e98d0bcd1464495d9b858c3e4846c"
+    },
+    {
+      "Start": "b5ab9424aa7e4ff58b66519aa9f0940c",
+      "End": "8f72a8500eaa496abb185be0bd50036b",
+      "Id": "de81fd451e774305bf36a293f8d606ee"
+    },
+    {
+      "Start": "b5ab9424aa7e4ff58b66519aa9f0940c",
+      "End": "70bdbf3baa34452ab794a457fa788ed9",
+      "Id": "74b3baa0da7d46ae9f47f53c25a54f52"
+    },
+    {
+      "Start": "b5ab9424aa7e4ff58b66519aa9f0940c",
+      "End": "3b08bb6e823d47b2b41fd8ca3bac22c0",
+      "Id": "68e5184b194b4af1997384e63e6af6bc"
+    },
+    {
+      "Start": "40da37f12b8b4480adee4b8d3f8fea89",
+      "End": "655fa8cccaab47a0bd72b273c8de6675",
+      "Id": "59c5ebccf4b04574a5941bf49d91150f"
+    },
+    {
+      "Start": "40da37f12b8b4480adee4b8d3f8fea89",
+      "End": "c1f2ab108c044a4b9d8686baa770c139",
+      "Id": "6c8d196cbc0a4c8a89bf6596cec0c28e"
+    },
+    {
+      "Start": "40da37f12b8b4480adee4b8d3f8fea89",
+      "End": "7198692b31114bd8bbe4d6ae2e81b174",
+      "Id": "82a8224be6fc48498bfa9aba4f68d978"
+    },
+    {
+      "Start": "40da37f12b8b4480adee4b8d3f8fea89",
+      "End": "3f409456adea4728827539576fc12090",
+      "Id": "d26a0cf9894e439c82b6062f19d5a225"
+    },
+    {
+      "Start": "de4304e1bc4b4d0f9ae29c450f04554f",
+      "End": "9362c945f86e4a38a74b8d30ff25a38b",
+      "Id": "7df2842f3c87422aaa692743e739736b"
+    },
+    {
+      "Start": "de4304e1bc4b4d0f9ae29c450f04554f",
+      "End": "0bafca1228524dec8547b1e922b17bf4",
+      "Id": "94c97cc535a44d97a40360554077fb42"
+    },
+    {
+      "Start": "2d0dbaf8f7af41edbc9d940d17a58248",
+      "End": "ddedd00f2f274c5d9d5f3fe0ce9ac50b",
+      "Id": "793819127d774fa78804ce51550a9600"
+    },
+    {
+      "Start": "970e004034bc4825b4a2de8aa5fdd527",
+      "End": "3ca0f2d01e224f8d8319c7fdaa55a2d5",
+      "Id": "2ac69ed943b243d6993eda366cb0a6c1"
+    },
+    {
+      "Start": "970e004034bc4825b4a2de8aa5fdd527",
+      "End": "fcd26f1123c945188b054c416b7fbc6e",
+      "Id": "8aa135bcb8ba4c25acfeff531f5e259b"
+    },
+    {
+      "Start": "19d7e2af40ec47b9a95002bcaaa2a6dd",
+      "End": "7410c64d13a84f7f8e90a04d86a4df7e",
+      "Id": "90df9c17f50647b795e2b6671dbade15"
+    },
+    {
+      "Start": "fdfa209ca44a4ed883c6a2fd1217b017",
+      "End": "424e3e0c69ef4742a2038b4314366387",
+      "Id": "9c116d13ae064f1a94b91d67dcb35bea"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "Structural Design",
+      "Version": "2022.4.17",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "b9061a51be664149a3103edc3df460ae",
+        "6b995bea071c4708a5b92744ba04b7d6",
+        "c207e5574fda43f2bc4c5e8f4d9aa0a6",
+        "9de64d51ed3c4a48b0b01870d8b70dee",
+        "93a3b6d9cb144fb388ffdaaf7ffb5d68",
+        "18b265c440cf4615a68a20306f8f51a0"
+      ]
+    }
+  ],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.12",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "1.10",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.12.1.8246",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -10057.6201171875,
+      "EyeY": 12917.1025390625,
+      "EyeZ": 50503.34375,
+      "LookX": 10132.7158203125,
+      "LookY": -10977.1025390625,
+      "LookZ": -48974.75390625,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "AreaReinforcement.CreateBasedOnHost",
+        "Id": "b9061a51be664149a3103edc3df460ae",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 356.0,
+        "Y": 82.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Select Model Element",
+        "Id": "44a940a3392347c7838133a523250253",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 119.02131285969438,
+        "Y": -94.066927437120071
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Select Edge",
+        "Id": "0c1fe6e245ed474fa0d023cdfd256d9c",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -143.68106721687508,
+        "Y": 32.084350845760667
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Line.Direction",
+        "Id": "de4ea15888644c96923e6f96f8e0124f",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 96.3206066508377,
+        "Y": 32.478494581668969
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Maximum Spacing ?",
+        "Id": "6f5d47619bcc4179a9ebc757a8b99041",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -44.258266300926721,
+        "Y": 159.27479705809282
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "RebarBarType",
+        "Id": "6b995bea071c4708a5b92744ba04b7d6",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -104.65315298601547,
+        "Y": 226.31928361405534
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Spacing",
+        "Id": "1b6da68555274b3b8f1e6f76e3a844b9",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 8.6335916351189326,
+        "Y": 319.14265367648312
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "AreaReinforcement.SetHooks",
+        "Id": "c207e5574fda43f2bc4c5e8f4d9aa0a6",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1007.289500871626,
+        "Y": 92.147719550549809
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "RebarHookType",
+        "Id": "9de64d51ed3c4a48b0b01870d8b70dee",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 760.29566747477668,
+        "Y": 249.7524736513401
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Views",
+        "Id": "2d2e154b49164cbbb3df05ff41b6964a",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1440.1377139583997,
+        "Y": 270.02099919286
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Boolean",
+        "Id": "77292360811e4e4d894a7d32058dab8e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1450.4462402583979,
+        "Y": 366.99094096738247
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "AreaReinforcement.SetSolidInView",
+        "Id": "93a3b6d9cb144fb388ffdaaf7ffb5d68",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1665.64932405682,
+        "Y": -101.07576629418497
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "AreaReinforcement.SetUnobscuredInView",
+        "Id": "18b265c440cf4615a68a20306f8f51a0",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1669.7444981212518,
+        "Y": 44.780384718179789
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Boolean",
+        "Id": "89c71b2c52e8411690a81bbd191404b0",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 832.668726491144,
+        "Y": 342.39731886342037
+      }
+    ],
+    "Annotations": [],
+    "X": 757.89292737329367,
+    "Y": 216.54690615522702,
+    "Zoom": 0.40378196657542825
+  }
+}
