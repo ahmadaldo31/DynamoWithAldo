@@ -1,0 +1,291 @@
+{
+  "Uuid": "54a17eaa-bf1f-4bea-aae0-dd1df424c2f5",
+  "IsCustomNode": false,
+  "Description": "",
+  "Name": "JoinGeometry",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [
+    {
+      "Id": "0f1e44411fd540679c2c5e66c27792be",
+      "Name": "Select Model Elements By Category",
+      "Type": "hostSelection",
+      "Value": "6946a2f0-50c4-434a-a911-18bcb1d75325-0004dffd,6946a2f0-50c4-434a-a911-18bcb1d75325-0004dfff,6946a2f0-50c4-434a-a911-18bcb1d75325-0004e000,6946a2f0-50c4-434a-a911-18bcb1d75325-0004e063,6946a2f0-50c4-434a-a911-18bcb1d75325-0004e064,6946a2f0-50c4-434a-a911-18bcb1d75325-0004e065,6946a2f0-50c4-434a-a911-18bcb1d75325-0004e09d,6946a2f0-50c4-434a-a911-18bcb1d75325-0004e09e,6946a2f0-50c4-434a-a911-18bcb1d75325-0004e09f,6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0a4,6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0a5,6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0a9,6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0aa,6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0ab,6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0af,6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0b0,6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0b1,6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0b5,6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0b6,6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0b7,6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0ef,6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0f0,6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0f1,6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0f2,6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0f3,6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0f4,6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0f5,6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0f6,6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0f7,6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0f8,6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0f9,6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0fb,6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0fc,6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0fd,6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0fe,6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0ff,6946a2f0-50c4-434a-a911-18bcb1d75325-0004e100,6946a2f0-50c4-434a-a911-18bcb1d75325-0004e101,6946a2f0-50c4-434a-a911-18bcb1d75325-0004e102,6946a2f0-50c4-434a-a911-18bcb1d75325-0004e103,50863391-349b-4945-bf3e-e14cdc29c4e5-000567af,50863391-349b-4945-bf3e-e14cdc29c4e5-0005687c,50863391-349b-4945-bf3e-e14cdc29c4e5-00056920,50863391-349b-4945-bf3e-e14cdc29c4e5-0005697d",
+      "Description": "Select multiple elements from the Revit document filtered by Category.",
+      "SelectedIndex": 0
+    },
+    {
+      "Id": "a943229de6eb486abca3e70f1076ceb5",
+      "Name": "Select Model Elements By Category",
+      "Type": "hostSelection",
+      "Value": "6946a2f0-50c4-434a-a911-18bcb1d75325-00052911,6946a2f0-50c4-434a-a911-18bcb1d75325-00052912,6946a2f0-50c4-434a-a911-18bcb1d75325-00052913,6946a2f0-50c4-434a-a911-18bcb1d75325-00052914,6946a2f0-50c4-434a-a911-18bcb1d75325-00052915,6946a2f0-50c4-434a-a911-18bcb1d75325-00052916,6946a2f0-50c4-434a-a911-18bcb1d75325-00052917,6946a2f0-50c4-434a-a911-18bcb1d75325-00052918,6946a2f0-50c4-434a-a911-18bcb1d75325-00052919,6946a2f0-50c4-434a-a911-18bcb1d75325-0005291a,6946a2f0-50c4-434a-a911-18bcb1d75325-0005291b,6946a2f0-50c4-434a-a911-18bcb1d75325-0005291c,6946a2f0-50c4-434a-a911-18bcb1d75325-0005291d,6946a2f0-50c4-434a-a911-18bcb1d75325-0005291e,6946a2f0-50c4-434a-a911-18bcb1d75325-0005291f,6946a2f0-50c4-434a-a911-18bcb1d75325-00052920,6946a2f0-50c4-434a-a911-18bcb1d75325-00052921,6946a2f0-50c4-434a-a911-18bcb1d75325-00052922,6946a2f0-50c4-434a-a911-18bcb1d75325-00052923,6946a2f0-50c4-434a-a911-18bcb1d75325-00052924,6946a2f0-50c4-434a-a911-18bcb1d75325-00052925,6946a2f0-50c4-434a-a911-18bcb1d75325-00052926,6946a2f0-50c4-434a-a911-18bcb1d75325-00052927,6946a2f0-50c4-434a-a911-18bcb1d75325-00052928,6946a2f0-50c4-434a-a911-18bcb1d75325-00052929,6946a2f0-50c4-434a-a911-18bcb1d75325-0005292a,6946a2f0-50c4-434a-a911-18bcb1d75325-0005292b,6946a2f0-50c4-434a-a911-18bcb1d75325-0005292c,6946a2f0-50c4-434a-a911-18bcb1d75325-0005292d,6946a2f0-50c4-434a-a911-18bcb1d75325-0005292e,6946a2f0-50c4-434a-a911-18bcb1d75325-0005292f,6946a2f0-50c4-434a-a911-18bcb1d75325-00052930,6946a2f0-50c4-434a-a911-18bcb1d75325-00052931,6946a2f0-50c4-434a-a911-18bcb1d75325-00052932,6946a2f0-50c4-434a-a911-18bcb1d75325-00052933,6946a2f0-50c4-434a-a911-18bcb1d75325-00052934,6946a2f0-50c4-434a-a911-18bcb1d75325-00052935,6946a2f0-50c4-434a-a911-18bcb1d75325-00052936,6946a2f0-50c4-434a-a911-18bcb1d75325-00052937,6946a2f0-50c4-434a-a911-18bcb1d75325-00052938",
+      "Description": "Select multiple elements from the Revit document filtered by Category.",
+      "SelectedIndex": 0
+    }
+  ],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Element.JoinGeometry@Revit.Elements.Element",
+      "Id": "2c0caa56cd8245bfbd66d8b91398fd75",
+      "Inputs": [
+        {
+          "Id": "666e1b5b8d1e468f85cccda88f844290",
+          "Name": "element",
+          "Description": "Revit.Elements.Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f50bd239ae7e4702b668dd41606ee87f",
+          "Name": "otherElement",
+          "Description": "Other element to join with\n\nElement",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "fc9dc9555a3d41b7954e42700201339f",
+          "Name": "Element[]",
+          "Description": "The two joined elements",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Joins the geometry of two elements, if they are intersecting.\n\nElement.JoinGeometry (otherElement: Element): Element[]"
+    },
+    {
+      "ConcreteType": "Dynamo.ComboNodes.DSModelElementsByCategorySelection, DSRevitNodesUI",
+      "SelectedIndex": 686,
+      "NodeType": "ExtensionNode",
+      "InstanceId": [
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0004dffd",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0004dfff",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0004e000",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0004e063",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0004e064",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0004e065",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0004e09d",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0004e09e",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0004e09f",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0a4",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0a5",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0a9",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0aa",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0ab",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0af",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0b0",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0b1",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0b5",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0b6",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0b7",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0ef",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0f0",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0f1",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0f2",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0f3",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0f4",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0f5",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0f6",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0f7",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0f8",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0f9",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0fb",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0fc",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0fd",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0fe",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0004e0ff",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0004e100",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0004e101",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0004e102",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0004e103",
+        "50863391-349b-4945-bf3e-e14cdc29c4e5-000567af",
+        "50863391-349b-4945-bf3e-e14cdc29c4e5-0005687c",
+        "50863391-349b-4945-bf3e-e14cdc29c4e5-00056920",
+        "50863391-349b-4945-bf3e-e14cdc29c4e5-0005697d"
+      ],
+      "Id": "0f1e44411fd540679c2c5e66c27792be",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "aa4acceb39834e709a4143219a4bf825",
+          "Name": "Elements",
+          "Description": "The selected elements.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled"
+    },
+    {
+      "ConcreteType": "Dynamo.ComboNodes.DSModelElementsByCategorySelection, DSRevitNodesUI",
+      "SelectedIndex": 686,
+      "NodeType": "ExtensionNode",
+      "InstanceId": [
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-00052911",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-00052912",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-00052913",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-00052914",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-00052915",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-00052916",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-00052917",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-00052918",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-00052919",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0005291a",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0005291b",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0005291c",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0005291d",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0005291e",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0005291f",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-00052920",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-00052921",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-00052922",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-00052923",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-00052924",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-00052925",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-00052926",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-00052927",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-00052928",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-00052929",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0005292a",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0005292b",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0005292c",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0005292d",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0005292e",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-0005292f",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-00052930",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-00052931",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-00052932",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-00052933",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-00052934",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-00052935",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-00052936",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-00052937",
+        "6946a2f0-50c4-434a-a911-18bcb1d75325-00052938"
+      ],
+      "Id": "a943229de6eb486abca3e70f1076ceb5",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "1cc14c66892b4cacbad6a29c0ee7f09c",
+          "Name": "Elements",
+          "Description": "The selected elements.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "aa4acceb39834e709a4143219a4bf825",
+      "End": "666e1b5b8d1e468f85cccda88f844290",
+      "Id": "50eef9ae77994d0083e27c1957bd4b81"
+    },
+    {
+      "Start": "1cc14c66892b4cacbad6a29c0ee7f09c",
+      "End": "f50bd239ae7e4702b668dd41606ee87f",
+      "Id": "b099900781b649d5ad9ddbb67cca0c24"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Thumbnail": "",
+  "GraphDocumentationURL": null,
+  "ExtensionWorkspaceData": [
+    {
+      "ExtensionGuid": "28992e1d-abb9-417f-8b1b-05e053bee670",
+      "Name": "Properties",
+      "Version": "2.12",
+      "Data": {}
+    },
+    {
+      "ExtensionGuid": "DFBD9CC0-DB40-457A-939E-8C8555555A9D",
+      "Name": "Generative Design",
+      "Version": "1.10",
+      "Data": {}
+    }
+  ],
+  "Author": "",
+  "Linting": {
+    "activeLinter": "None",
+    "activeLinterId": "7b75fb44-43fd-4631-a878-29f4d5d8399a",
+    "warningCount": 0,
+    "errorCount": 0
+  },
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.12.1.8246",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Element.JoinGeometry",
+        "Id": "2c0caa56cd8245bfbd66d8b91398fd75",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 439.0,
+        "Y": 266.0
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Select Model Elements By Category",
+        "Id": "0f1e44411fd540679c2c5e66c27792be",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 144.96850362765088,
+        "Y": 105.15767093921539
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Select Model Elements By Category",
+        "Id": "a943229de6eb486abca3e70f1076ceb5",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 151.08638905628635,
+        "Y": 358.28518054900985
+      }
+    ],
+    "Annotations": [],
+    "X": -182.56681071418291,
+    "Y": -72.50851945936995,
+    "Zoom": 1.3076413563671876
+  }
+}
